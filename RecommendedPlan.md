@@ -6,7 +6,7 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: AW
 
 ## Digital courses
 
-1. [AWS ML Engineer Associate Curriculum Overview](https://explore.skillbuilder.aws/learn/course/20380/play/134462/aws-ml-engineer-associate-curriculum-overview) (45 minutes)
+1. [AWS ML Engineer Associate Curriculum Overview](https://explore.skillbuilder.aws/learn/course/20380/play/134462/aws-ml-engineer-associate-curriculum-overview) (45 minutes){:target="_blank"}
 
 2. Collect, Ingest, and Store Data (1 hour)
 
