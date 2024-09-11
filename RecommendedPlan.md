@@ -8,13 +8,18 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: AW
 
 1. [AWS ML Engineer Associate Curriculum Overview](https://explore.skillbuilder.aws/learn/course/20380/play/134462/aws-ml-engineer-associate-curriculum-overview) (45 minutes)
 
-2. Collect, Ingest, and Store Data (1 hour)
+- [ML Algorithms](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/)
+- [LLMs](https://aws.amazon.com/what-is/large-language-model/)
+- [Responsible AI/ML](https://aws.amazon.com/machine-learning/responsible-ai/)
+- [SageMaker](https://docs.aws.amazon.com/sagemaker/)
 
-3. Transform Data (1 hour)
+2. [Collect, Ingest, and Store Data](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19562/aws-ml-engineer-associate-11-collect-ingest-and-store-data) (1 hour)
 
-4. Validate Data and Prepare for Modeling (45 minutes)
+3. [Transform Data](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19564/aws-ml-engineer-associate-12-transform-data) (1 hour)
 
-5. Choose a Modeling Approach (1 hour 30 minutes)
+4. [Validate Data and Prepare for Modeling](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19563/aws-ml-engineer-associate-13-validate-data-and-prepare-for-modeling) (45 minutes)
+
+5. [Choose a Modeling Approach](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19651/aws-ml-engineer-associate-21-choose-a-modeling-approach) (1 hour 30 minutes)
 
 6. Train Models (1 hour 30 minutes)
 
@@ -22,7 +27,7 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: AW
 
 8. Analyze Model Performance (45 minutes)
 
-9. Select a Deployment Infrastructure (1 hour)
+9.  Select a Deployment Infrastructure (1 hour)
 
 10. Create and Script Infrastructure (1 hour 30 minutes)
 

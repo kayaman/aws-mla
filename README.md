@@ -150,3 +150,8 @@ Amazon Comprehend can be used to detect and redact personal information from use
 
 - https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html
 
+
+## Responsible AI
+
+- [Responsible AI](https://aws.amazon.com/ai/responsible-ai/)
+- [Tools and resources to build AI responsibly](https://aws.amazon.com/ai/responsible-ai/resources/)
