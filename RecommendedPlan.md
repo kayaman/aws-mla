@@ -8,10 +8,16 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: AW
 
 1. [AWS ML Engineer Associate Curriculum Overview](https://explore.skillbuilder.aws/learn/course/20380/play/134462/aws-ml-engineer-associate-curriculum-overview) (45 minutes)
 
-- [ML Algorithms](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/)
-- [LLMs](https://aws.amazon.com/what-is/large-language-model/)
-- [Responsible AI/ML](https://aws.amazon.com/machine-learning/responsible-ai/)
-- [SageMaker](https://docs.aws.amazon.com/sagemaker/)
+* Resources:  
+
+   - [ML Algorithms](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/)
+   - [LLMs](https://aws.amazon.com/what-is/large-language-model/)
+   - [Responsible AI/ML](https://aws.amazon.com/machine-learning/responsible-ai/)
+   - [SageMaker](https://docs.aws.amazon.com/sagemaker/)
+
+
+### Domain 1: Data processing
+
 
 2. [Collect, Ingest, and Store Data](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19562/aws-ml-engineer-associate-11-collect-ingest-and-store-data) (1 hour)
 
