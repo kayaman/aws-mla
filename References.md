@@ -10,3 +10,7 @@
 ## Cost Optimization
 
 - https://docs.aws.amazon.com/whitepapers/latest/cost-optimization-laying-the-foundation/reporting-cost-optimization-tools.html
+
+## Data Ingestion and Preparation
+
+- https://docs.aws.amazon.com/whitepapers/latest/ml-best-practices-public-sector-organizations/data-ingestion-and-preparation.html#data-preparation
