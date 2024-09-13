@@ -2,7 +2,7 @@
 
 Although we don't require that you take any specific training before you take an exam, we do recommend that have the underlying training and knowledge outlined in the exam guide.
 
-If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: AWS Certified Machine Learning Engineer - Associate (MLA-C01)(opens in a new tab).  The learning plan includes all of following the recommended courses. If you are already logged into AWS Skill Builder, use this link version to access the plan.(opens in a new tab)
+If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [AWS Certified Machine Learning Engineer - Associate (MLA-C01)](https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/). The learning plan includes all of following the recommended courses. If you are already logged into AWS [Skill Builder](https://skillbuilder.aws/), use this link version to access the plan.
 
 ## Digital courses
 
