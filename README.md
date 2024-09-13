@@ -9,3 +9,8 @@
 
 ## References [here](References.md)
 
+## Udemy
+
+- Course [here](https://www.udemy.com/course/aws-certified-machine-learning-engineer-associate-mla-c01/)
+- Practice Exams [here](https://www.udemy.com/course/practice-exams-aws-certified-machine-learning-engineer-associate/)
+
