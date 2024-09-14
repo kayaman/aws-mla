@@ -58,3 +58,14 @@ Which type of visualization would help the data analyst determine relationships 
 Which AWS streaming services would be best suited for processing real-time streaming data for the ML inference with minimal management overhead?
   
     *Kinesis Data Streams provides durable real-time data streaming that can capture and store data from many different sources. Amazon Managed Service for Apache Flink can query, analyze, and run computations on streaming data. Using a combination of both of these services, you can ingest real-time data using Kinesis Data Streams. Then, you can process it with Apache Flink for suitable use for ML inference.*
+
+## Choose a modeling approach
+
+1. You are a machine learning engineer for a cybersecurity company and planning to train your own model to detect security threats. You want to train your model using deep learning and SageMaker.  
+Which of the AI/ML stack would you choose to accomplish your goal?
+
+    *AWS ML frameworks and infrastructure helps you train your model with a deep learning framework.*
+
+2. You are training your machine learning (ML) model for a classification problem. You provide answers in the example data during training. Which algorithm can be used for a binary classification, a multi-class classification, and a regression ML task?  
+
+    *XGBoost - This implements a gradient-boosted trees algorithm that combines an ensemble of estimates from a set of simpler and weaker models. It can be used for binary classification, multi-class classification, and regression problems.*
