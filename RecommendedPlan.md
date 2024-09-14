@@ -30,7 +30,7 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [A
 5. [Choose a Modeling Approach](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19651/aws-ml-engineer-associate-21-choose-a-modeling-approach) (1 hour 30 minutes)
 
 <table>
-   <tr><td>[AI Services](AIServices.md)</td></tr>
+   <tr><td><a href="AIServices.md">AI Services</a></td></tr>
    <tr><td>ML Services</td></tr>
    <tr><td>ML Frameworks and Infrastructure</td></tr>
 </table>
