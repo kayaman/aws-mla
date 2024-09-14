@@ -29,29 +29,37 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [A
 
 5. [Choose a Modeling Approach](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19651/aws-ml-engineer-associate-21-choose-a-modeling-approach) (1 hour 30 minutes)
 
-6. [Train Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19696/aws-ml-engineer-associate-22-train-models) (1 hour 30 minutes)
+<table>
+   <tr><td>[AI Services](AIServices.md)</td></tr>
+   <tr><td>ML Services</td></tr>
+   <tr><td>ML Frameworks and Infrastructure</td></tr>
+</table>
 
-7. [Refine Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19678/aws-ml-engineer-associate-23-refine-models) (2 hours)
 
-8. Analyze Model Performance (45 minutes)
 
-9.  Select a Deployment Infrastructure (1 hour)
+1. [Train Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19696/aws-ml-engineer-associate-22-train-models) (1 hour 30 minutes)
 
-10. Create and Script Infrastructure (1 hour 30 minutes)
+2. [Refine Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19678/aws-ml-engineer-associate-23-refine-models) (2 hours)
 
-11. Automate Deployment (1 hour 15 minutes)
+3. Analyze Model Performance (45 minutes)
 
-12. Monitor Model Performance and Data Quality (2 hours 30 minutes)
+4.  Select a Deployment Infrastructure (1 hour)
 
-13. Monitor and Optimize Infrastructure and Costs (2 hours 30 minutes)
+5.  Create and Script Infrastructure (1 hour 30 minutes)
 
-14. Secure AWS ML Resources (2 hours 15 minutes)
+6.  Automate Deployment (1 hour 15 minutes)
 
-15. AWS ML Engineer Associate Curriculum Conclusion (10 minute)
+7.  Monitor Model Performance and Data Quality (2 hours 30 minutes)
 
-16. Planning a Machine Learning Project (30 minutes)
+8.  Monitor and Optimize Infrastructure and Costs (2 hours 30 minutes)
 
-17. Amazon Bedrock Getting Started (1 hour)
+9.  Secure AWS ML Resources (2 hours 15 minutes)
+
+10. AWS ML Engineer Associate Curriculum Conclusion (10 minute)
+
+11. Planning a Machine Learning Project (30 minutes)
+
+12. Amazon Bedrock Getting Started (1 hour)
 
 ## Experiential and game-based learning
 
