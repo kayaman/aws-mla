@@ -22,6 +22,258 @@ Step Functions is a serverless orchestration service that you can use to coordin
 
 ## SageMaker
 
+### Instance Types
+
+![Instance Types](instance_types.png)
+
+- General Purpose
+  - These instances are suitable for a variety of ML tasks, including training and inference.
+  - Examples include the ml.m5 and ml.c5 instance families.
+  - They offer a balance of compute power, memory, and networking capabilities, which makes them suitable for most ML workloads.
+
+- Compute Optimized
+  - These instances are designed for compute-intensive workloads, such as training deep learning models or performing large-scale data processing.
+  - Examples include the ml.p3 and ml.c5n instance families, which are powered by high-performance GPUs and CPUs, respectively.
+  - They are well-suited for training complex neural networks, computer vision tasks, natural language processing, and other compute-intensive ML workloads.
+  
+- Memory Optimized
+  - These instances are optimized for workloads that require a large amount of memory, such as processing large datasets or running memory-intensive algorithms.
+  - Examples include the ml.r5 and ml.r5n instance families.
+  - They are particularly useful for tasks like large-scale data processing, in-memory databases, and certain types of deep learning models with large memory requirements.
+
+- Accelerated Computing
+  - These instances are designed specifically for accelerating compute-intensive workloads using hardware accelerators like GPUs or Tensor Cores.
+  - Examples include the ml.g4dn and ml.inf1 instance families, which are powered by NVIDIA GPUs and AWS Inferentia chips, respectively.
+  - They are ideal for tasks like training and deploying deep learning models and performing real-time inference at scale.
+  
+- Inference
+  - These instances are optimized for low-latency, high-throughput inference workloads, which are common in production deployments of ML models.
+  - Examples include the ml.inf1 and ml.c6i instance families.
+  - They are designed to provide cost-effective and efficient inference capabilities, which makes them suitable for deploying ML models in real-time applications.
+
+
+When selecting a SageMaker instance type, you should consider several factors, such as the following.
+
+
+* Workload requirements  
+    Evaluate the computational demands of your ML task. This includes the complexity of the model, the size of the dataset, and the desired training or inference performance. 
+
+
+* Performance  
+    Different instance types offer varying levels of performance in terms of CPU, GPU, memory, and networking capabilities. Choose an instance type that aligns with your performance requirements.
+
+
+* Cost  
+    SageMaker instances are billed on an hourly basis, and different instance types have varying costs. Consider your budget constraints and choose an instance type that provides the best performance-to-cost ratio for your needs.
+
+
+* Availability  
+    Some instance types might have limited availability in certain AWS Regions. Ensure that the instance type you need is available in your preferred Region.
+
+
+* Scalability  
+    If you anticipate your workload requirements will change over time, consider instance types that offer scalability options. Instances should be able to scale up or down resources or use automatic scaling features.
+
+
+* Integration with other AWS services  
+    Consider whether your ML workflow involves other AWS services and choose an instance type that integrates well with those services. By carefully evaluating these factors, you can select the most suitable SageMaker instance type for your specific ML workload. These factors help to ensure optimal performance, cost-effectiveness, and scalability.
+
+### Model Selection
+
+When selecting a model in SageMaker, consider the following factors.
+
+
+* Problem type  
+    The first step is to identify the type of problem you're trying to solve, such as classification, regression, clustering, or recommendation systems. Some algorithms are better suited for specific problem types.
+
+
+* Data characteristics  
+    Analyze your data to understand its size, dimensionality, noise levels, and potential biases. This information can guide you in choosing an appropriate model architecture and algorithm.
+
+
+* Performance requirements  
+    Consider the desired performance metrics for your model, such as accuracy, precision, recall, or F1-score. Some algorithms might prioritize one metric over others, so choose accordingly. 
+
+
+* Training time and computational resources  
+    Models have varying computational requirements during training. Consider the available resources (CPU, GPU, and memory) and the time constraints for your project.
+
+
+* Interpretability  
+    If interpretability is important for your use case, you might want to choose simpler models like linear or tree-based algorithms over complex deep learning models. The latter can be more challenging to interpret.
+
+
+* Model complexity  
+    Simple models might not capture complex patterns in the data, whereas overly complex models can lead to overfitting. Strike a balance between model complexity and generalization performance.
+
+
+* Scalability  
+    If your dataset or application is expected to grow significantly, choose a model that can scale well with increasing data volume and complexity.
+
+
+* Domain knowledge  
+    Use your domain expertise or consult with subject matter experts to inform your model selection process. Take into consideration that certain algorithms might be more suitable for specific domains.
+
+### Model Types
+
+* Generalized linear models  
+    These models include linear regression, logistic regression, and linear support vector machines. They are fast to train and interpret but have low flexibility.
+
+* Tree-based models  
+    These models include boosted trees, random forests, and decision trees. They provide higher accuracy than linear models with slightly longer training times. They are more flexible and interpretable than neural networks.Tree-based models
+
+* Neural-networks  
+    These include multilayer perceptrons and convolutional neural networks. They require large datasets but can model complex nonlinear relationships. They are slow to train and difficult to interpret.
+
+* Clustering  
+    This option includes algorithms like k-means and DBSCAN for segmenting data into groups with high intra-group and low inter-group similarity. It is useful for exploratory data analysis.
+
+* Matrix factorization  
+    This option includes techniques like principal components analysis for recommender systems, dimensionality reduction, and feature learning.
+
+* Forecasting  
+    This option includes time series models like autoregressive integrated moving average (ARIMA) for forecasting future values based on past data.
+
+* Computer vision  
+    This option includes pre-built models for object detection and semantic segmentation in images and videos using neural networks.
+
+### Built-in Algorithms
+
+![Built-in](built_in_types.png)
+  
+For more information, visit [Use Amazon SageMaker Built-in Algorithms or Pre-trained Models](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html).
+
+* Supervised Learning
+  
+  * Linear Learner Algorithm  
+    Learns a linear function for regression or a linear threshold function for classification.  
+    To learn more, see: [Linear Learner Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html).
+
+
+  * XGBoost Algorithm  
+    Implements a gradient-boosted trees algorithm that combines an ensemble of estimates from a set of simpler and weaker models.  
+    To learn more, see: [XGBoost Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html).
+
+
+  * K-Nearest Neighbors (k-NN) Algorithm  
+    Uses a non-parametric method that uses the k nearest labeled points to assign a label to a new data point for classification— can also be used to predict a target value from the average of the k nearest points for regression.  
+    To learn more, see: [K-Nearest Neighbors (k-NN) Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/k-nearest-neighbors.html).
+
+
+  * Factorization Machines Algorithm  
+    An extension of a linear model that is designed to economically capture interactions between features within high-dimensional sparse datasets.  
+    To learn more, see: [Factorization Machines Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/fact-machines.html).
+
+* Unsupervised Learning
+
+  * K-Means Algorithm  
+    This algorithm finds discrete groupings within data. It first looks to see if all the data points in a cluster are as similar to each other as possible. It then looks to see if data points from different clusters are as different as possible.  
+    Uses: Clustering  
+    To learn more, see [K-Means Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/k-means.html).
+
+  * Latent Dirichlet Allocation (LDA) Algorithm  
+    This algorithm determines an algorithm suitable for determining topics in a set of documents. It is an unsupervised algorithm, which means that it doesn't use example data with answers during training.  
+    Uses: Clustering and Topic Modeling  
+    To learn more, see [Latent Dirichlet Allocation (LDA) Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/lda.html).
+
+  * Object2Vec Algorithm  
+    This algorithm uses a new highly customizable, multi-purpose algorithm for feature engineering. It can learn low-dimensional dense embeddings of high-dimensional objects to produce features that improve training efficiencies for downstream models. This is a supervised algorithm because it requires labeled data for training. There are many scenarios in which the relationship labels can be obtained purely from natural clusterings in data without any explicit human annotation.  
+    Uses: Embeddings  
+    To learn more, see [Object2Vec Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/object2vec.html).  
+
+  * Random Cut Forest (RCF) Algorithm  
+    This algorithm detects anomalous data points within a dataset that diverge from otherwise well-structured or patterned data.  
+    Uses: Anomaly Detection  
+    To learn more, see [Random Cut Forest (RCF) Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html).
+
+  * IP Insights  
+    This algorithm learns the usage patterns for IPv4 addresses. It is designed to capture associations between IPv4 addresses and various entities, such as user IDs or account numbers.  
+    Uses: Anomaly Detection  
+    To learn more, see [IP Insights](https://docs.aws.amazon.com/sagemaker/latest/dg/ip-insights.html).
+
+  * Principal Component Analysis (PCA) Algorithm  
+    This algorithm reduces the dimensionality, or number of features, within a dataset by projecting data points onto the first few principal components. The objective is to retain as much information or variation as possible. For mathematicians, principal components are eigenvectors of the data's covariance matrix.  
+    Uses: Dimensionality Reduction  
+    To learn more, see [Principal Component Analysis (PCA) Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/pca.html).
+
+* Text or Speech data
+
+  * BlazingText Algorithm  
+    This highly optimized implementation of the Word2vec and text classification algorithms scales to large datasets. It is useful for many downstream natural language processing (NLP) tasks.  
+    Uses: Text classification, Word2Vec  
+    To learn more, see [BlazingText Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/blazingtext.html).
+
+  * Sequence-to-Sequence Algorithm  
+    This supervised algorithm is commonly used for neural machine translation.  
+    Uses: Machine Translation for text or speech  
+    To learn more, see [Sequence-to-Sequence Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/seq-2-seq.html).
+
+  * Neural Topic Model (NTM) Algorithm  
+    This is another unsupervised technique for determining topics in a set of documents. It uses a neural network approach.  
+    Uses: Topic modeling  
+    To learn more, see: [Neural Topic Model (NTM) Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/ntm.html).
+
+* Images, videos or time-series
+
+  * ResNet  
+    This is a deep learning network developed to be highly accurate for image classification.  
+    Uses: Image classification  
+    To learn more, see [ResNet](https://arxiv.org/abs/1512.03385).
+
+  * Single Shot multibox Detector (SSD)  
+    This uses a convolutional neural network (CNN) pretrained for classification tasks as the base network. When using this for object detection, SageMaker supports various CNNs such as VGG-16 and ResNet-50.  
+    Uses: Object detection  
+    To learn more, see: [Single Shot multibox Detector (SSD)](https://arxiv.org/pdf/1512.02325.pdf).  
+    For more information about supported CNNs, see [VGG-16](https://arxiv.org/pdf/1409.1556.pdf) and [ResNet-50](https://arxiv.org/pdf/1603.05027.pdf).
+
+  * Semantic Segmentation Algorithm  
+    The SageMaker semantic segmentation algorithm provides a fine-grained, pixel-level approach to developing computer vision applications. It tags every pixel in an image with a class label from a predefined set of classes. Tagging is fundamental for understanding scenes. This is critical to an increasing number of computer vision applications, such as self-driving vehicles, medical imaging diagnostics, and robot sensing. The SageMaker semantic segmentation algorithm is built using the MXNet Gluon Framework and the Gluon CV Toolkit. It provides you with a choice of three built-in algorithms to train a deep neural network. You can use the Fully-Convolutional Network (FCN) Algorithm, Pyramid Scene Parsing (PSP) Algorithm, or DeepLabV3.  
+    Uses: Semantic Segmentation  
+    To learn more, see: [Semantic Segmentation Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/semantic-segmentation.html).  
+    For more information on the framework of this algorithm, see [MXNet Gluon Framework and the Gluon CV Toolkit](https://github.com/dmlc/gluon-cv).  
+    For more information on built-in algorithms, see [Fully-Convolutional Network (FCN) Algorithm](https://arxiv.org/abs/1605.06211), [Pyramid Scene Parsing (PSP) Algorithm](https://arxiv.org/abs/1612.01105), or [DeepLabV3](https://arxiv.org/abs/1706.05587).
+
+  * DeepAR Forecasting Algorithm  
+    This supervised learning algorithm is for forecasting scalar (one-dimensional) time series using recurrent neural networks (RNN).  
+    Uses: Time-series  
+    To learn more, see: [DeepAR Forecasting Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html)
+
+* Reinforcement Learning
+
+    For more information, see [Use Reinforcement Learning with Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/reinforcement-learning.html).
+
+
+### Autopilot (AutoML)
+
+Autopilot is a part of SageMaker Canvas. SageMaker Autopilot performs the following key tasks that you can use on autopilot or with various degrees of human guidance.
+
+
+* Data analysis and processing  
+    SageMaker Autopilot identifies your specific problem type, handles missing values, normalizes your data, selects features, and prepares the data for model training.
+
+* Model selection  
+    SageMaker Autopilot explores a variety of algorithms. SageMaker Autopilot uses a cross-validation resampling technique to generate metrics that evaluate the predictive quality of the algorithms based on predefined objective metrics.
+
+* Hyperparameter optimization  
+    SageMaker Autopilot automates the search for optimal hyperparameter configurations.
+
+* Model training and evaluation  
+    SageMaker Autopilot automates the process of training and evaluating various model candidates. It splits the data into training and validation sets, and then it trains the selected model candidates using the training data. Then it evaluates their performance on the unseen data of the validation set. Lastly, it ranks the optimized model candidates based on their performance and identifies the best performing model.
+
+* Model deployment  
+    After SageMaker Autopilot has identified the best performing model, it provides the option to deploy the model. It accomplishes this by automatically generating the model artifacts and the endpoint that expose an API. External applications can send data to the endpoint and receive the corresponding predictions or inferences.
+
+![AutoML](automl_process.png)
+
+1. Raw data: Load tabular data from Amazon S3 to train the model.
+2. Target: Select the target column for prediction.
+3. Automatic model creation: The correct algorithm is chosen, training and tuning is done automatically for the right model.
+4. Full visibility and control: Full visibility with model notebooks.
+5. Model leaderboard: Select the best model for your needs from a ranked list of recommendations.
+6. Deploy and monitor the model: Choice to optimize and retrain, to improve the model.
+
+To learn more about this feature set see, [SageMaker AutoPilot](https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html).
+
 ### VPC
 
 - https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html

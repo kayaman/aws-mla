@@ -35,7 +35,9 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [A
    <tr><td>ML Frameworks and Infrastructure</td></tr>
 </table>
 
+* Resources
 
+   - [Use Notebook Instances to Build Models](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-setup-working-env.html)
 
 1. [Train Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19696/aws-ml-engineer-associate-22-train-models) (1 hour 30 minutes)
 
