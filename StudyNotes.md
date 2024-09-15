@@ -400,17 +400,18 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html
 https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-faqs.html  
 https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html  
 
+---
+
 You can use the ModelExplainabilityMonitor class to generate a feature attribution baseline and to deploy a monitoring mechanism that evaluates whether the feature attribution has occurred. You can use CloudWatch to send notifications when feature attribution drift has occurred.  
 Learn more about [how to monitor for feature attribution drift](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-feature-attribution-drift.html).  
 Learn more about [the ModelExplainabilityMonitor class](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-shap-baseline.html).  
 Learn more about [CloudWatch integration with SageMaker Model Monitor](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html).
 
+---
+
 Use SageMaker Model Monitor to ingest and merge captured data from the endpoint and processed feedback. Create and schedule a baseline job and a model quality monitoring job. SageMaker Model Monitor is a feature of SageMaker that monitors the performance of ML models by comparing model predictions with actual Amazon SageMaker Ground Truth labels. SageMaker Model Monitor can ingest and merge captured data from the endpoint and the processed feedback. SageMaker Model Monitor can create and schedule a baseline job to establish a performance baseline. Additionally, SageMaker Model Monitor can create a model quality monitoring job to continuously monitor the model's performance. This solution requires the least amount of development effort compared to other options.  
 Learn more about [how to monitor a SageMaker model in production](https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-model-monitor.html).  
 Learn more about [how to monitor model quality](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html).
-
-
-
 
 ### Pipelines
 
@@ -433,7 +434,7 @@ Learn more about [the @step decorator](https://docs.aws.amazon.com/sagemaker/lat
 
 You can use SageMaker processing jobs for data processing, analysis, and ML model training. You can use SageMaker processing jobs to perform transformations on images by using a script in multiple programming languages. In this scenario, you can run the custom code on data that is uploaded to Amazon S3. SageMaker processing jobs provide ready-to-use Docker images for popular ML frameworks and tools. Additionally, SageMaker offers built-in support for various frameworks including TensorFlow, PyTorch, scikit-learn, XGBoost, and more.
 
-- https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
+https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
 
 ---
 
@@ -450,7 +451,7 @@ Learn more about the [SageMaker Processing job role](https://docs.aws.amazon.com
 
 SageMaker with TensorBoard is a capability of SageMaker that you can use to visualize and analyze intermediate tensors during model training. SageMaker with TensorBoard provides full visibility into the model training process, including debugging and model optimization. This solution gives you the ability to debug issues, including lower than expected precision for a specific class. You can analyze the intermediate activations and gradients during training. Then, you can gain insights into why some mobile phone images were getting misclassified. Finally, you can make adjustments to improve model performance.
 
-- https://docs.aws.amazon.com/sagemaker/latest/dg/tensorboard-on-sagemaker.html
+https://docs.aws.amazon.com/sagemaker/latest/dg/tensorboard-on-sagemaker.html
 
 ### Ground Truth
 
