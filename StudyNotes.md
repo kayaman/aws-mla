@@ -274,14 +274,17 @@ Autopilot is a part of SageMaker Canvas. SageMaker Autopilot performs the follow
 
 To learn more about this feature set see, [SageMaker AutoPilot](https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html).
 
-### VPC
+### Networking
 
 https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html  
 https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-model-internet-free.html  
+Learn more about [SageMaker notebook instance networking configurations](https://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-create-ws.html).  
+Learn more about [VPC endpoints](https://docs.aws.amazon.com/whitepapers/latest/aws-privatelink/what-are-vpc-endpoints.html).  
+Learn more about [NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html).
 
 ---
 
-Option: Configure SageMaker in VPC only mode. Configure security groups to block internet access.
+Configure SageMaker in VPC only mode. Configure security groups to block internet access.
 You can use a VPC to launch AWS resources within your own isolated virtual network. Security groups are a security control that you can use to control access to your AWS resources. You can protect your data and resources by managing security groups and restricting internet access from your VPC. However, this solution requires additional network configuration and therefore increases operational overhead.  
 Learn more about [SageMaker in VPC only mode](https://docs.aws.amazon.com/sagemaker/latest/dg/onboard-vpc.html).
 
@@ -292,6 +295,12 @@ Learn more about [how to connect to SageMaker within your VPC](https://docs.aws.
   
 Gateway VPC endpoints provide secure connections to Amazon S3 directly from your VPC. When you have a gateway VPC endpoint, you do not need an internet gateway or NAT device. The company stores S3 data in a different Region. Therefore, you cannot use gateway endpoints. Gateway endpoints support connections only within the same Region.  
 Learn more about [gateway endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html).
+
+---
+
+Set up a NAT gateway within the VPC. Configure security groups and network access control lists (network ACLs) to allow outbound connections.
+The SageMaker notebook does not have any internet access. Therefore, the VPC likely does not have a NAT gateway configured within the VPC. When you host SageMaker notebook instances in the private subnet of a VPC, you need a NAT gateway to access the internet.  
+Learn more about [how to connect a notebook instance in a VPC to external resources](https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-notebook-and-internet-access.html#appendix-notebook-and-internet-access-default).
 
 ### IAM
 
@@ -503,6 +512,12 @@ Use SageMaker Canvas to build predictive models. Register selected versions into
 SageMaker Canvas is a visual interface you can use for building ML prediction models. SageMaker Canvas gives data analysts the ability to build ML models without writing code. SageMaker Canvas also seamlessly integrates with SageMaker Model Registry, which helps you operationalize ML models.  
 Learn more about [SageMaker Canvas](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-register-model.html).
 
+---
+
+Use an Amazon SageMaker Canvas ready-to-use model to detect PII.
+SageMaker Canvas provides a code-free, visual, drag-and-drop environment to create ML models. SageMaker Canvas has ready-to-use models that you can use to automatically detect PII. You can use SageMaker Canvas to analyze text documents to identify and provide confidence scores for PII entities. This solution requires the least operational overhead because you can use a ready-to-use model to perform the task without the need to develop your own code.  
+Learn more about [how to make predictions by using ready-to-use models](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-ready-to-use-predict.html).
+
 ### Metrics
 
 Use Amazon CloudWatch to monitor SageMaker instance metrics that are used by the model.  
@@ -638,6 +653,19 @@ Learn more about [regularization type and amount](https://docs.aws.amazon.com/ma
 
 An error rate that rapidly decreases as the epochs increases indicates an overfitting problem when training the model. This problem means that the model is memorizing rather than generalizing, and the model is too dependent on the training data. Overfitting causes the model to generalize poorly when presented to new data not present in the initial training dataset. Regularization helps reduce the overfitting of the model because regularization penalizes extreme weight values in model parameters. This method helps the model to generalize better and avoid the initial overfitting issue encountered.  
 Learn more about [overfitting](https://aws.amazon.com/what-is/overfitting/).
+
+---
+
+Re-train the model periodically as the products that are offered change and the inventory changes. Use the original training data and new training data. As inventory and products change over time, the distribution of data that is used to make predictions will drift. The most suitable solution would be to re-train the ML model on a regular basis by using the original training data and newly collected data.  
+Learn more about [how to automate model re-training by using SageMaker workflows](https://docs.aws.amazon.com/sagemaker/latest/dg/workflows.html).
+
+## Costs
+
+
+Assign a user-defined tag to the project AWS resources that includes a project identifier. Activate user-defined tags in the AWS Billing and Cost Management console and use AWS Cost Explorer to filter costs by the project identifier.
+Cost Explorer provides a visual interface to track the costs of AWS resource usage. AWS resources that you use in this solution support the addition of user-defined tags. If you add a project identifier tag to these resources and activate user-defined tags in the Billing and Cost Management console, you can use the project identifier filter in Cost Explorer to track the project costs.  
+Learn more about [how to tag AWS resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).  
+Learn more about [how to activate and filter costs by using user-defined tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html).  
 
 ## Responsible AI
 

@@ -28,6 +28,16 @@ To create a batch inference job, you need to send a CreateModelInvocationJob req
 Learn more about [how to create a batch inference job in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html).  
 Learn more about [how to format and upload input data](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html).
 
+3. A data scientist is training a deep learning neural network by using Amazon SageMaker. The data scientist wants to debug the model to identify and address model convergence issues. The data scientist wants to use real-time monitoring to determine if there is a sampling imbalance between classes.  
+Which solution will meet these requirements with the LEAST operational overhead?
+
+
+    *Set up a SageMaker training job that is configured to include SageMaker Debugger. Start the training job and monitor for sampling imbalance by using SageMaker Debugger built-in rules.*
+
+SageMaker Debugger provides a suite of tools to debug training jobs in real time and to monitor training jobs. ClassImbalance is a SageMaker Debugger built-in rule. The rule measures sampling imbalances between the prediction classes and alerts if the imbalance is above a threshold. You can call the built-in rules through the SageMaker API. Therefore, this solution requires the least operational overhead.  
+Learn more about [how to debug training jobs in SageMaker by using SageMaker Debugger](https://docs.aws.amazon.com/sagemaker/latest/dg/train-debugger.html).  
+Learn more about [SageMaker Debugger built-in rules](https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-built-in-rules.html).  
+
 ## Collect, Ingest, and Store Data
 
 1. A retail company wants to use an Amazon Elastic File System (Amazon EFS) file server for their machine learning (ML) workload. The Amazon EFS file server will be used to store data for model training that will be accessed from a fleet of training instances.
