@@ -6,7 +6,10 @@
   
     * Amazon Rekognition  
        Amazon Rekognition is a video analysis service that adds advanced computer vision capabilities to your applications using an API. The service is a pre-trained deep learning technology that identifies objects, people, text, scenes, and activities in images and videos stored in Amazon Simple Storage Service (Amazon S3). Customers often use Amazon Rekognition in media and entertainment, security and surveillance, and retail and marketing.   
-       For more information, see [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html).
+       For more information, see [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html).  
+
+       Amazon Rekognition provides image and video analysis for applications. Additionally, Amazon Rekognition provides image and video moderation APIs that can automatically detect inappropriate or offensive content, both synchronously and asynchronously.  
+       Learn more about [Amazon Rekognition moderation APIs](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html).
 
   * Speech
     * Amazon Polly  

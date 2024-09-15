@@ -293,6 +293,13 @@ Learn more about [how to connect to SageMaker within your VPC](https://docs.aws.
 Gateway VPC endpoints provide secure connections to Amazon S3 directly from your VPC. When you have a gateway VPC endpoint, you do not need an internet gateway or NAT device. The company stores S3 data in a different Region. Therefore, you cannot use gateway endpoints. Gateway endpoints support connections only within the same Region.  
 Learn more about [gateway endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html).
 
+### IAM
+
+Add an inline policy to the execution role of the SageMaker Studio domain. The SageMaker Studio domain that runs the notebook needs permissions to access various AWS services, including Secrets Manager. You can grant these permissions by attaching a policy to the execution role of the domain. The IAM role defines what actions the notebook can perform. Therefore, the IAM role that is attached to the SageMaker domain should have a policy that allows the necessary action on Secrets Manager.  
+(When the data scientist accesses the notebook, SageMaker Studio assumes the execution role that is associated to the SageMaker Studio domain. Therefore, SageMaker Studio assumes the execution role's set of permissions. The notebook does not assume the role of the data scientist's IAM user.)  
+Learn more about [Identity and Access Management (IAM) for SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam.html).  
+Learn more about [IAM policies for SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html).
+
 ### Deployment and Endpoints
 
 You can use a SageMaker asynchronous endpoint to host an ML model. With a SageMaker asynchronous endpoint, you can receive responses for each request in near real time for up to 60 minutes of processing time. There is no idle cost to operate an asynchronous endpoint. Therefore, this solution is the most cost-effective. Additionally, you can configure a SageMaker asynchronous inference endpoint with a connection to your VPC.  
@@ -329,9 +336,14 @@ Learn more about [how to use target tracking scaling policies for SageMaker endp
 
 ---
 
-When you host a SageMaker ML model to run real-time inferences, you can configure auto scaling to dynamically adjust the number of instances to run the workload. Auto scaling adds new instances when the workload increases and removes unused instances when the workload decreases. Auto scaling is the most suitable solution to accommodate the expected surge. This solution ensures that the endpoint remains available and can respond to increased workload.
-
+When you host a SageMaker ML model to run real-time inferences, you can configure auto scaling to dynamically adjust the number of instances to run the workload. Auto scaling adds new instances when the workload increases and removes unused instances when the workload decreases. Auto scaling is the most suitable solution to accommodate the expected surge. This solution ensures that the endpoint remains available and can respond to increased workload.  
 Learn more about [how to automatically scale SageMaker models](https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html).
+
+---
+
+Specify a cooldown period in the target tracking scaling policy. You can decrease scaling activities by configuring cooldown periods. This method protects against over-scaling when capacity increases or decreases. The next scaling activity cannot happen until the cooldown period has ended. Therefore, by specifying a cooldown period, you can handle intermittent spikes in traffic.  
+Learn more about [cooldown periods in endpoint auto scaling](https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling-prerequisites.html#endpoint-auto-scaling-target-cooldown).  
+Learn more about [SageMaker scaling policies](https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling-prerequisites.html#endpoint-auto-scaling-policy).  
 
 ### Containers
 
@@ -339,16 +351,16 @@ You can use the SageMaker SDK to bring existing ML models that are written in R 
 Learn more about [how to bring your own containers in SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-byoc-containers.html).  
 Learn more about [how to use R in SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/r-guide.html).  
 
+---
+
 Extend the prebuilt SageMaker scikit-learn framework container to include custom dependencies. The scikit-learn framework container is a prebuilt image that SageMaker provides. The scikit-learn framework container installs the scikit-learn Python modules for ML workloads. The container does not include custom libraries. Therefore, you can extend the Docker image to add additional dependencies. You can use the included scikit-learn container libraries, the proprietary library, and settings without the need to create a new image from nothing. Therefore, this solution requires the least operational overhead.  
 Learn more about [how to extend a prebuilt SageMaker container](https://docs.aws.amazon.com/sagemaker/latest/dg/prebuilt-containers-extend.html).
 
 
 ### Input Modes
 
-Input modes include file mode, pipe mode, and fast file mode. File mode downloads training data to a local directory in a Docker container. Pipe mode streams data directly to the training algorithm. Therefore, pipe mode can lead to better performance. Fast file mode provides the benefits of both file mode and pipe mode. For example, fast file mode gives SageMaker the flexibility to access entire files in the same way as file mode. Additionally, fast file mode provides the better performance of pipe mode.
-
-Before you begin training, fast file mode identifies S3 data source files. However, fast file mode does not download the files. Instead, fast file mode gives the model the ability to begin training before the entire dataset has finished loading. Therefore, fast file mode decreases the startup time. As the training progresses, the entire dataset will load. Therefore, you must have enough space within the storage capacity of the training instance. This solution provides an update to only a single parameter and does not require any code changes. Therefore, this solution requires the least operational overhead.
-
+Input modes include file mode, pipe mode, and fast file mode. File mode downloads training data to a local directory in a Docker container. Pipe mode streams data directly to the training algorithm. Therefore, pipe mode can lead to better performance. Fast file mode provides the benefits of both file mode and pipe mode. For example, fast file mode gives SageMaker the flexibility to access entire files in the same way as file mode. Additionally, fast file mode provides the better performance of pipe mode.  
+Before you begin training, fast file mode identifies S3 data source files. However, fast file mode does not download the files. Instead, fast file mode gives the model the ability to begin training before the entire dataset has finished loading. Therefore, fast file mode decreases the startup time. As the training progresses, the entire dataset will load. Therefore, you must have enough space within the storage capacity of the training instance. This solution provides an update to only a single parameter and does not require any code changes. Therefore, this solution requires the least operational overhead.  
 Learn more about [how to access training data](https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html).
 
 
@@ -358,13 +370,10 @@ SageMaker AMT searches for the most suitable version of a model by running train
 
 ### Model Registry
 
-You can use SageMaker Model Registry to create a catalog of models for production, to manage the versions of a model, and to associate metadata to the model. Additionally, SageMaker Model Registry can manage approvals and automate model deployment for continuous integration and continuous delivery (CI/CD). You would not use SageMaker Model Registry for model re-training.
-
-- https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html
+You can use SageMaker Model Registry to create a catalog of models for production, to manage the versions of a model, and to associate metadata to the model. Additionally, SageMaker Model Registry can manage approvals and automate model deployment for continuous integration and continuous delivery (CI/CD). You would not use SageMaker Model Registry for model re-training.  
+https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html
 
 ### Experiments
-
----
 
 SageMaker Experiments is a feature of SageMaker Studio that you can use to automatically create ML experiments by using different combinations of data, algorithms, and parameters. You would not use SageMaker Experiments to collect new data for model re-training.   
 Learn more about [SageMaker Experiments](https://docs.aws.amazon.com/sagemaker/latest/dg/experiments.html).  
@@ -377,11 +386,10 @@ Learn more about [SageMaker Experiments](https://docs.aws.amazon.com/sagemaker/l
 
 ### Model Monitor
 
-You can use SageMaker Model Monitor to effectively gauge model quality. Data Capture is a feature of SageMaker endpoints. You can use Data Capture to record data that you can then use for training, debugging, and monitoring. Then, you could use the new data that is captured by Data Capture to re-train the model. Data Capture runs asynchronously without impacting production traffic.
-
-- https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html
-- https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-faqs.html
-- https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html
+You can use SageMaker Model Monitor to effectively gauge model quality. Data Capture is a feature of SageMaker endpoints. You can use Data Capture to record data that you can then use for training, debugging, and monitoring. Then, you could use the new data that is captured by Data Capture to re-train the model. Data Capture runs asynchronously without impacting production traffic.  
+https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html  
+https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-faqs.html  
+https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html  
 
 You can use the ModelExplainabilityMonitor class to generate a feature attribution baseline and to deploy a monitoring mechanism that evaluates whether the feature attribution has occurred. You can use CloudWatch to send notifications when feature attribution drift has occurred.  
 Learn more about [how to monitor for feature attribution drift](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-feature-attribution-drift.html).  
@@ -444,8 +452,6 @@ Learn more about [SageMaker Ground Truth image labeling job inputs](https://docs
 
 ### Data Wrangler
 
----
-
 SageMaker Data Wrangler split transform:
 
 - Randomized split: splits data randomly among train, test, and validation (optional) at predefined ratios. This strategy is best when you want to shuffle the order of your input data.
@@ -479,6 +485,12 @@ Use SageMaker Data Wrangler to perform encoding on the categorical variables.
 Ordinal encoding assigns unique integers to each category of a categorical variable. Ordinal encoding gives the model the ability to process categorical data by converting the data into a numerical format. Therefore, ordinal encoding is useful for XGBoost and similar models. To encode categorical data gives you the ability to create a numerical representation for categories. Then, the data can be analyzed more efficiently.  
 Learn more about [SageMaker XGBoost](https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html).  
 Learn more about [ordinal encoding](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html#data-wrangler-transform-cat-encode).
+
+---
+
+Use SageMaker Data Wrangler within the SageMaker Canvas environment to fill missing values. SageMaker Data Wrangler is a service that you can use to prepare data for machine learning. You can use SageMaker Data Wrangler to preprocess data and fill missing values. You can enable feature engineering directly within the SageMaker Canvas environment. This solution uses features already in the SageMaker Canvas environment. Therefore, this solution is the most operationally efficient.  
+Learn more about [SageMaker Data Wrangler](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html).  
+Learn more about [how to fill missing values by using SageMaker Data Wrangler](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html#data-wrangler-transform-handle-missing).
 
 ### Model Cards
 
@@ -527,6 +539,12 @@ Use Amazon SageMaker Feature Store to store features for reuse and to provide ac
 Learn more about [SageMaker Feature Store](https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html).  
 Learn more about [SageMaker Feature Store managed policies](https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-feature-store.html).
 
+### Drift
+
+Bias drift, data quality drift, and feature attribution drift can affect the performance and interpretability of an ML model after deployment. Data quality drift occurs when the distribution of real-life data differs significantly from the distribution of the data that is used to train the model. Bias drift is the disparate treatment of different groups. You should use continued monitoring of the model to help identify bias drift. Feature attribution drift occurs when model interpretability is affected because the relative importance of features starts to change.  
+Learn more about [how to monitor bias drift for models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-bias-drift.html).  
+Learn more about [how to monitor feature attribution drift for models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-feature-attribution-drift.html).  
+Learn more about [how to monitor data quality drift for models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html). 
 
 ## Bedrock
 
@@ -602,7 +620,7 @@ Regularization penalizes extreme weight values in model coefficients.
 L1 regularization is used to reduce the noise in the models, reducing some model coefficient weights to 0. When regularization is used, it effectively eliminates the features and overall complexity of the model, and it can help to solve overfitting models. However, this model is underfitting, so increasing L1 regularization will not help in this scenario.  
 L2 regularization reduces the weights of the model coefficients, but does not push the weights to 0. Regularization is used to stabilize the weights when there is a high correlation between the input features, and it can help to solve overfitting models. However, this model is underfitting, so increasing L2 regularization does not help in this scenario.  
 Learn more about [regularization type and amount](https://docs.aws.amazon.com/machine-learning/latest/dg/training-parameters.html#regularization-type-and-amount).
-
+ 
 ## Responsible AI
 
 - [Responsible AI](https://aws.amazon.com/ai/responsible-ai/)
