@@ -8,7 +8,11 @@
 
 ## Recommended Plan [here](RecommendedPlan.md)
 
-## Study Notes [here](StudyNotes.md)
+## Study Notes 
+
+- [SageMaker](SageMaker.md)
+- [Bedrock](Bedrock.md)
+- [general](StudyNotes.md)
 
 ## Sample Questions [here](Questions.md)
 
