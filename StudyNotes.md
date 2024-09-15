@@ -548,6 +548,10 @@ Learn more about [how to monitor data quality drift for models in production](ht
 
 ## Bedrock
 
+Learn more about [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+
+---
+
 To enhance a user question, you can add relevant retrieved documents into the context. You can use prompt engineering techniques to help support effective communication with the LLMs. By augmenting the prompt, the LLMs are able to generate precise answers to user queries.  
 Learn more about [augmenting the LLM prompt](https://aws.amazon.com/what-is/retrieval-augmented-generation/).
 
@@ -569,6 +573,15 @@ Knowledge bases for Amazon Bedrock provide you with the capability to amass data
 Learn more about [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).  
 Learn more about [provisioned throughput for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html).  
 Learn more about [knowledge bases for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html).  
+
+---
+
+Step 1: Prepare a dataset of labeled entries in JSON Lines format.  
+Step 2: Run a fine-tuning job by using a source model and the training data.  
+Step 3: Deploy the fine-tuned model that includes provisioned throughput.  
+Amazon Bedrock offers two methods for model customization: fine-tuning and continued pre-training. You can use fine-tuning to specialize a foundation model (FM) on a specific task by using labeled data. Labeled data must be prepared with prompts and completions specific to that task. Continued pre-training uses unlabeled data to familiarize a model with a domain without specializing in any task in particular. Because the company wants to improve performance in one specific task (summarization), you should use fine-tuning. After you train a custom model, you need to purchase provisioned throughput for the custom model before you can start using the model. Serverless inference is not supported for custom models.  
+Learn more about [model customization in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html).  
+Learn more about [how to use a custom model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html).  
 
 ## Glue
 
@@ -621,6 +634,11 @@ L1 regularization is used to reduce the noise in the models, reducing some model
 L2 regularization reduces the weights of the model coefficients, but does not push the weights to 0. Regularization is used to stabilize the weights when there is a high correlation between the input features, and it can help to solve overfitting models. However, this model is underfitting, so increasing L2 regularization does not help in this scenario.  
 Learn more about [regularization type and amount](https://docs.aws.amazon.com/machine-learning/latest/dg/training-parameters.html#regularization-type-and-amount).
  
+---
+
+An error rate that rapidly decreases as the epochs increases indicates an overfitting problem when training the model. This problem means that the model is memorizing rather than generalizing, and the model is too dependent on the training data. Overfitting causes the model to generalize poorly when presented to new data not present in the initial training dataset. Regularization helps reduce the overfitting of the model because regularization penalizes extreme weight values in model parameters. This method helps the model to generalize better and avoid the initial overfitting issue encountered.  
+Learn more about [overfitting](https://aws.amazon.com/what-is/overfitting/).
+
 ## Responsible AI
 
 - [Responsible AI](https://aws.amazon.com/ai/responsible-ai/)

@@ -6,7 +6,7 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [A
 
 ## Exams
 
-- [Examm Prep Official Pretest](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19742/exam-prep-official-pretest-aws-certified-machine-learning-engineer-associate-mla-c01-english)
+- [Exam Prep Official Pretest](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19742/exam-prep-official-pretest-aws-certified-machine-learning-engineer-associate-mla-c01-english)
 - [Official Practice Question Set](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19688/exam-prep-official-practice-question-set-aws-certified-machine-learning-engineer-associate-mla-c01-english)
 
 ## Digital courses
