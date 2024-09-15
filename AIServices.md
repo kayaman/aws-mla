@@ -21,7 +21,9 @@
   * Text
     * Amazon Comprehend  
       Amazon Comprehend uses natural language processing (NLP) to extract insight about the content of documents. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document. Amazon Comprehend can be used on content classification and management, customer insights, compliance monitoring, marketing analysis, healthcare, and more.  
-      For more information see, [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html).
+      For more information see, [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html).  
+      Amazon Comprehend can be used to detect and redact personal information from user interactions. Amazon Comprehend provides the ability to locate and redact PII entities in English or Spanish text documents. By leveraging Amazon Comprehend, you can easily process and anonymize personal information in the customer data platform.  
+      https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html
 
     * Amazon Translate  
       Amazon Translate is a text translation service that uses advanced machine learning technologies to provide high-quality translation on demand. You can use Amazon Translate to translate unstructured text documents or to build applications that work in multiple languages. Amazon Translate is a versatile application for global communication because it supports real-time and batch text translation across multiple languages.  
