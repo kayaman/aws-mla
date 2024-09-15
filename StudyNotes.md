@@ -276,8 +276,10 @@ To learn more about this feature set see, [SageMaker AutoPilot](https://docs.aws
 
 ### VPC
 
-- https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html
-- https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-model-internet-free.html
+https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html  
+https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-model-internet-free.html  
+
+---
 
 Option: Configure SageMaker in VPC only mode. Configure security groups to block internet access.
 You can use a VPC to launch AWS resources within your own isolated virtual network. Security groups are a security control that you can use to control access to your AWS resources. You can protect your data and resources by managing security groups and restricting internet access from your VPC. However, this solution requires additional network configuration and therefore increases operational overhead.  
@@ -286,18 +288,15 @@ Learn more about [SageMaker in VPC only mode](https://docs.aws.amazon.com/sagema
 ---
 
 You can use VPC interface endpoints to privately connect your VPC to supported AWS services and VPC endpoint services by using AWS PrivateLink. You can use a VPC interface endpoint to secure ML model training data. For example, you can use a VPC interface endpoint to ensure that all API calls to SageMaker are made within the VPC.  
-Learn more about [how to connect to SageMaker within your VPC](https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html).
+Learn more about [how to connect to SageMaker within your VPC](https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html).  
 Gateway VPC endpoints provide secure connections to Amazon S3 directly from your VPC. When you have a gateway VPC endpoint, you do not need an internet gateway or NAT device. The company stores S3 data in a different Region. Therefore, you cannot use gateway endpoints. Gateway endpoints support connections only within the same Region.  
 Learn more about [gateway endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html).
 
 ### Deployment and Endpoints
 
----
-
-You can use a SageMaker asynchronous endpoint to host an ML model. With a SageMaker asynchronous endpoint, you can receive responses for each request in near real time for up to 60 minutes of processing time. There is no idle cost to operate an asynchronous endpoint. Therefore, this solution is the most cost-effective. Additionally, you can configure a SageMaker asynchronous inference endpoint with a connection to your VPC.
-
-- https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html#deploy-model-options
-- https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference.html
+You can use a SageMaker asynchronous endpoint to host an ML model. With a SageMaker asynchronous endpoint, you can receive responses for each request in near real time for up to 60 minutes of processing time. There is no idle cost to operate an asynchronous endpoint. Therefore, this solution is the most cost-effective. Additionally, you can configure a SageMaker asynchronous inference endpoint with a connection to your VPC.  
+https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html#deploy-model-options  
+https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference.html  
 
 ---
 
