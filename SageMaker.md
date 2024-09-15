@@ -530,7 +530,27 @@ Learn more about [SageMaker Feature Store managed policies](https://docs.aws.ama
 
 ## Drift
 
+- Data Drift:
+  
+  Data drift refers to changes in the statistical properties of the input data over time compared to the data the model was trained on. These changes can occur due to shifts in the real-world environment or evolving user behavior, causing the model's input data distribution to differ from the original training set. Data drift can degrade model performance, as the model was optimized for a different data distribution. Monitoring and detecting data drift is critical for ensuring that the model remains accurate and reliable, often prompting retraining or updating of the model to reflect current data patterns.
+
+- Model Drift:
+  
+  Model drift occurs when a machine learning model's predictive performance degrades over time, typically due to shifts in data patterns (such as data drift) or the emergence of new patterns that were not captured in the original training process. As a result, the model becomes less effective at making accurate predictions or decisions. Model drift can be identified through regular monitoring of model performance metrics, such as accuracy or error rates. To address model drift, retraining the model with updated data or fine-tuning the model's parameters is often required to restore its performance.
+
+---
+
 Bias drift, data quality drift, and feature attribution drift can affect the performance and interpretability of an ML model after deployment. Data quality drift occurs when the distribution of real-life data differs significantly from the distribution of the data that is used to train the model. Bias drift is the disparate treatment of different groups. You should use continued monitoring of the model to help identify bias drift. Feature attribution drift occurs when model interpretability is affected because the relative importance of features starts to change.  
 Learn more about [how to monitor bias drift for models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-bias-drift.html).  
 Learn more about [how to monitor feature attribution drift for models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-feature-attribution-drift.html).  
 Learn more about [how to monitor data quality drift for models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html). 
+
+---
+
+Summary of Best Approach:  
+  
+1. Amazon SageMaker Model Monitor to detect data and model drift in real time.
+2. Amazon SageMaker Pipelines for automating the retraining and redeployment of models when drift is detected.
+3. Amazon SageMaker Feature Store to track and version data, ensuring that data drift is manageable.
+4. Amazon SageMaker Clarify to ensure model explainability and monitor changes in feature attribution (which can indicate drift).
+5. Use CloudWatch to track performance metrics and trigger alarms for model drift.

@@ -89,6 +89,17 @@ Cost Explorer provides a visual interface to track the costs of AWS resource usa
 Learn more about [how to tag AWS resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).  
 Learn more about [how to activate and filter costs by using user-defined tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html).  
 
+## Ensemble Learning techniques
+
+1. Bagging (Bootstrap Aggregating):  
+Bagging trains multiple versions of the same model on different random subsets of the training data (with replacement) and combines their predictions to reduce variance. It is useful when a model is prone to overfitting, such as decision trees. A common use case is the Random Forest algorithm, which utilizes bagging to create a strong ensemble of decision trees.
+
+2. Stacking:  
+Stacking combines predictions from different models (base models) by training a meta-model that learns how to best integrate them. This technique leverages the strengths of various models, making it useful when different models perform well on different aspects of the data. It is commonly used in machine learning competitions to improve predictive performance by combining diverse models.
+
+3. Boosting:  
+Boosting sequentially trains models, where each model attempts to correct the errors made by its predecessor, resulting in a stronger overall model. It is particularly useful for improving weak learners and is commonly applied in algorithms like AdaBoost, Gradient Boosting, and XGBoost for tasks like classification and regression, often yielding high accuracy on structured data problems.
+
 ## Responsible AI
 
 - [Responsible AI](https://aws.amazon.com/ai/responsible-ai/)
