@@ -4,9 +4,21 @@
 
 The bias versus variance trade-off refers to the challenge of balancing the error due to the model's complexity (variance) and the error due to incorrect assumptions in the model (bias), where high bias can cause underfitting and high variance can cause overfitting
 
+---
+
+Managed Spot Training uses Amazon EC2 Spot instance to run training jobs instead of on-demand instances. You can specify which training jobs use spot instances and a stopping condition that specifies how long SageMaker waits for a job to run using Amazon EC2 Spot instances. Spot instances can be interrupted, causing jobs to take longer to start or finish. You can configure your managed spot training job to use checkpoints. SageMaker copies checkpoint data from a local path to Amazon S3. When the job is restarted, SageMaker copies the data from Amazon S3 back into the local path. The training job can then resume from the last checkpoint instead of restarting.  
+https://aws.amazon.com/blogs/aws/managed-spot-training-save-up-to-90-on-your-amazon-sagemaker-training-jobs/  
+https://aws.amazon.com/blogs/aws/managed-spot-training-save-up-to-90-on-your-amazon-sagemaker-training-jobs/  
+
 ## Tuning
 
-https://aws.amazon.com/what-is/hyperparameter-tuning/
+Your model is underfitting the training data when the model performs poorly on the training data. This is because the model is unable to capture the relationship between the input examples (often called X) and the target values (often called Y). Your model is overfitting your training data when you see that the model performs well on the training data but does not perform well on the evaluation data. This is because the model is memorizing the data it has seen and is unable to generalize to unseen examples.  
+https://docs.aws.amazon.com/machine-learning/latest/dg/  model-fit-underfitting-vs-overfitting.html
+https://aws.amazon.com/what-is/overfitting/  
+
+---
+
+https://aws.amazon.com/what-is/hyperparameter-tuning/  
 
 ## Instance Types
 
@@ -139,6 +151,15 @@ For more information, visit [Use Amazon SageMaker Built-in Algorithms or Pre-tra
   * XGBoost Algorithm  
     Implements a gradient-boosted trees algorithm that combines an ensemble of estimates from a set of simpler and weaker models.  
     To learn more, see: [XGBoost Algorithm](https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html).
+
+    The XGBoost (eXtreme Gradient Boosting) is a popular and efficient open-source implementation of the gradient boosted trees algorithm. Gradient boosting is a supervised learning algorithm that tries to accurately predict a target variable by combining multiple estimates from a set of simpler models. The XGBoost algorithm performs well in machine learning competitions for the following reasons:  
+    Its robust handling of a variety of data types, relationships, distributions.  
+    The variety of hyperparameters that you can fine-tune.  
+    XGBoost is an extension of Gradient Boosting that includes additional features such as regularization, handling of missing values, and support for weighted classes, making it particularly well-suited for imbalanced datasets like fraud detection. It also offers significant computational efficiency, which is beneficial when working with large datasets.
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html  
+https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost_hyperparameters.html  
+https://aws.amazon.com/blogs/gametech/fraud-detection-for-games-using-machine-learning/  
 
 
   * K-Nearest Neighbors (k-NN) Algorithm  
@@ -349,6 +370,16 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.ht
 
 https://aws.amazon.com/blogs/machine-learning/a-b-testing-ml-models-in-production-using-amazon-sagemaker/
 
+---
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-deployment.html  
+https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html  
+
+---
+
+Amazon EKS is designed for containerized applications that need high scalability and flexibility. It is suitable for the generative AI model, which may require complex orchestration and scaling in response to varying demand, while giving you full control over the deployment environment.  
+https://aws.amazon.com/blogs/containers/deploy-generative-ai-models-on-amazon-eks/
+
 ## Containers
 
 You can use the SageMaker SDK to bring existing ML models that are written in R into SageMaker by using the "bring your own container" option. This solution requires the least operational overhead because you only need to compose a Dockerfile for each existing model.  
@@ -367,6 +398,9 @@ Input modes include file mode, pipe mode, and fast file mode. File mode download
 Before you begin training, fast file mode identifies S3 data source files. However, fast file mode does not download the files. Instead, fast file mode gives the model the ability to begin training before the entire dataset has finished loading. Therefore, fast file mode decreases the startup time. As the training progresses, the entire dataset will load. Therefore, you must have enough space within the storage capacity of the training instance. This solution provides an update to only a single parameter and does not require any code changes. Therefore, this solution requires the least operational overhead.  
 Learn more about [how to access training data](https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html).
 
+---
+
+FastFile mode is useful for scenarios where you need rapid access to data with low latency, but it is best suited for workloads with many small files. You should note that FastFile mode can be used only while accessing data from Amazon S3 and not with Amazon FSx for Lustre.
 
 ## AMT
 
@@ -422,6 +456,11 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/pipeline-eventbridge.html
 
 Wrap the custom training logic into a function and use the @step decorator in the function. Add the function as a step in the current pipeline. You can use the @step decorator to integrate custom ML functions into an existing pipeline workflow.  
 Learn more about [the @step decorator](https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-step-decorator.html).
+
+---
+
+Amazon SageMaker Pipelines is a purpose-built workflow orchestration service to automate machine learning (ML) development. SageMaker Pipelines is specifically designed to orchestrate end-to-end ML workflows, integrating data processing, model training, hyperparameter tuning, and deployment in a seamless manner. It provides built-in versioning, lineage tracking, and support for continuous integration and delivery (CI/CD), making it the best choice for this use case.  
+AWS Step Functions is a powerful service for orchestrating workflows, and it can integrate with SageMaker and Lambda. However, using Step Functions for the entire ML workflow adds complexity since it requires coordinating multiple services, whereas SageMaker Pipelines provides a more seamless, integrated solution for ML-specific workflows.  
 
 ## Jobs
 
@@ -495,6 +534,10 @@ Use SageMaker Data Wrangler within the SageMaker Canvas environment to fill miss
 Learn more about [SageMaker Data Wrangler](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html).  
 Learn more about [how to fill missing values by using SageMaker Data Wrangler](https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler-transform.html#data-wrangler-transform-handle-missing).
 
+---
+
+https://aws.amazon.com/blogs/machine-learning/exploratory-data-analysis-feature-engineering-and-operationalizing-your-data-flow-into-your-ml-pipeline-with-amazon-sagemaker-data-wrangler/  
+
 ## Model Cards
 
 SageMaker Model Cards is a service that you can use to document the business details of models in one place. SageMaker Model Cards gives consumers the ability to review the critical details of all models in one place. You can use model cards to document details including the background and purpose of models. You can export model cards to share with stakeholders.  
@@ -511,6 +554,10 @@ Learn more about [SageMaker Canvas](https://docs.aws.amazon.com/sagemaker/latest
 Use an Amazon SageMaker Canvas ready-to-use model to detect PII.
 SageMaker Canvas provides a code-free, visual, drag-and-drop environment to create ML models. SageMaker Canvas has ready-to-use models that you can use to automatically detect PII. You can use SageMaker Canvas to analyze text documents to identify and provide confidence scores for PII entities. This solution requires the least operational overhead because you can use a ready-to-use model to perform the task without the need to develop your own code.  
 Learn more about [how to make predictions by using ready-to-use models](https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-ready-to-use-predict.html).
+
+---
+
+https://aws.amazon.com/blogs/machine-learning/use-amazon-sagemaker-canvas-for-exploratory-data-analysis/
 
 ## Metrics
 
@@ -589,8 +636,58 @@ Pruning and quantization are both effective methods for reducing model size. Pru
 [Model Pruning](https://aws.amazon.com/blogs/machine-learning/pruning-machine-learning-models-with-amazon-sagemaker-debugger-and-amazon-sagemaker-experiments/)  
 [Quantization](https://aws.amazon.com/blogs/machine-learning/leveraging-low-precision-and-quantization-for-deep-learning-using-the-amazon-ec2-c5-instance-and-bigdl/)
 
+## Evaluate, explain, and detect bias in models
+
+### Evaluate foundation models
+
+### Explain and detect bias
+
+#### SageMaker Clarify Processing Job
+
+[Use SageMaker Clarify to explain and detect bias](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html)  
+
+#### Detect pre-training bias
+
+- Class imbalance (CI)
+  Class imbalance (CI) bias occurs when a facet value d has fewer training samples when compared with another facet a in the dataset. This is because models preferentially fit the larger facets at the expense of the smaller facets and so can result in a higher training error for facet d. Models are also at higher risk of overfitting the smaller data sets, which can cause a larger test error for facet d. Consider the example where a machine learning model is trained primarily on data from middle-aged individuals (facet a), it might be less accurate when making predictions involving younger and older people (facet d).  
+  https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-bias-metric-class-imbalance.html
+
+- Conditional Demographic Disparity (CDD)
+  CDD evaluates the disparity in positive prediction rates across demographic groups, conditioned on a specific feature like income, to detect bias that may not be apparent when only considering overall outcomes.  
+  Conditional Demographic Disparity (CDD) measures the difference in positive prediction rates between demographic groups, while conditioning on relevant features like income. This allows you to identify subtle biases that might be masked when looking only at overall predictions, ensuring that the model's decisions are fair across different groups given their specific circumstances.  
+  https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-data-bias-metric-cddl.html
+
+- Difference in Proportions of Labels (DPL)
+  The difference in proportions of labels (DPL) compares the proportion of observed outcomes with positive labels for facet d with the proportion of observed outcomes with positive labels of facet a in a training dataset. For example, you could use it to compare the proportion of middle-aged individuals (facet a) and other age groups (facet d) approved for financial loans. Machine learning models try to mimic the training data decisions as closely as possible. So a machine learning model trained on a dataset with a high DPL is likely to reflect the same imbalance in its future predictions.  
+  https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-data-bias-metric-true-label-imbalance.html  
+
+More on [Measure Pre-training Bias](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-data-bias.html)  
+
+#### Detect post-training data and model bias
+
+[Measure Post-training Data and Model Bias](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html)  
+
+| metric | description |
+|--------|-------------|
+| [Difference in Positive Proportions in Predicted Labels (DPPL)](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-post-training-bias-metric-dppl.html)	| Measures the difference in the proportion of positive predictions between the favored facet a and the disfavored facet d. |
+| [Disparate Impact (DI)](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-post-training-bias-metric-di.html) |	Measures the ratio of proportions of the predicted labels for the favored facet a and the disfavored facet d. |
+| [Conditional Demographic Disparity in Predicted Labels (CDDPL)](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-post-training-bias-metric-cddpl.html) |	Measures the disparity of predicted labels between the facets as a whole, but also by subgroups. |
+  
+Learn more [here](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html)  
+
+### Model Explainability
+
+[Feature Attributions that Use Shapley Values](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-shapley-values.html)  
+[A Unified Approach to Interpreting Model Predictions](https://papers.nips.cc/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf)  
+
+### Use Explainability with Autopilot
+
+Autopilot uses tools provided by Amazon SageMaker Clarify to help provide insights into how machine learning (ML) models make predictions. These tools can help ML engineers, product managers, and other internal stakeholders understand model characteristics. To trust and interpret decisions made on model predictions, both consumers and regulators rely on transparency in machine learning in order.  
+https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-explainability.html  
 
 ## Other
+
+[Boosting](https://aws.amazon.com/what-is/boosting/)
   
 [Ensembles](https://aws.amazon.com/blogs/machine-learning/efficiently-train-tune-and-deploy-custom-ensembles-using-amazon-sagemaker/)
 
@@ -609,3 +706,7 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-deployment.html
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-overview.html
 
 https://aws.amazon.com/codecommit/
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-incident-response.html
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html
