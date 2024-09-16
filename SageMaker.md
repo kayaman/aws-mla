@@ -516,6 +516,16 @@ Learn more about [DPL](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-d
 
 ## Feature Store
 
+You can use Feature Store in the following modes: 
+
+- Online – In online mode, features are read with low latency (milliseconds) reads and used for high throughput predictions. This mode requires a feature group to be stored in an online store. 
+- Offline – In offline mode, large streams of data are fed to an offline store, which can be used for training and batch inference. This mode requires a feature group to be stored in an offline store. The offline store uses your S3 bucket for storage and can also fetch data using Athena queries. 
+- Online and Offline – This includes both online and offline modes.
+
+You can ingest data into feature groups in Feature Store in two ways: streaming or in batches. When you ingest data through streaming, a collection of records are pushed to Feature Store by calling a synchronous PutRecord API call. This API enables you to maintain the latest feature values in Feature Store and to push new feature values as soon an update is detected.
+
+---
+
 Adding a new feature.  
 Use the UpdateFeatureGroup operation to add the new feature to the feature group. Specify the name and type. A SageMaker feature group gives you the ability to add new features through the UpdateFeatureGroup operation. When you use this API, you need to provide the new feature names and types.  
 Learn more about [the UpdateFeatureGroup operation](https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-update-feature-group.html).  
@@ -554,3 +564,9 @@ Summary of Best Approach:
 3. Amazon SageMaker Feature Store to track and version data, ensuring that data drift is manageable.
 4. Amazon SageMaker Clarify to ensure model explainability and monitor changes in feature attribution (which can indicate drift).
 5. Use CloudWatch to track performance metrics and trigger alarms for model drift.
+
+## Other
+  
+[Ensembles](https://aws.amazon.com/blogs/machine-learning/efficiently-train-tune-and-deploy-custom-ensembles-using-amazon-sagemaker/)
+
+[Access Training Data](https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html)
