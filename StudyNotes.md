@@ -89,6 +89,13 @@ Cost Explorer provides a visual interface to track the costs of AWS resource usa
 Learn more about [how to tag AWS resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).  
 Learn more about [how to activate and filter costs by using user-defined tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html).  
 
+---
+
+https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html  
+https://aws.amazon.com/aws-cost-management/aws-cost-explorer/  
+https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html
+
+
 ## Ensemble Learning techniques
 
 1. Bagging (Bootstrap Aggregating):  

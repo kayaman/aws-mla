@@ -1,5 +1,13 @@
 # SageMaker
 
+## Training
+
+The bias versus variance trade-off refers to the challenge of balancing the error due to the model's complexity (variance) and the error due to incorrect assumptions in the model (bias), where high bias can cause underfitting and high variance can cause overfitting
+
+## Tuning
+
+https://aws.amazon.com/what-is/hyperparameter-tuning/
+
 ## Instance Types
 
 ![Instance Types](instance_types.png)
@@ -332,6 +340,15 @@ Specify a cooldown period in the target tracking scaling policy. You can decreas
 Learn more about [cooldown periods in endpoint auto scaling](https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling-prerequisites.html#endpoint-auto-scaling-target-cooldown).  
 Learn more about [SageMaker scaling policies](https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling-prerequisites.html#endpoint-auto-scaling-policy).  
 
+---
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-blue-green.html  
+https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html  
+
+---
+
+https://aws.amazon.com/blogs/machine-learning/a-b-testing-ml-models-in-production-using-amazon-sagemaker/
+
 ## Containers
 
 You can use the SageMaker SDK to bring existing ML models that are written in R into SageMaker by using the "bring your own container" option. This solution requires the least operational overhead because you only need to compose a Dockerfile for each existing model.  
@@ -565,8 +582,30 @@ Summary of Best Approach:
 4. Amazon SageMaker Clarify to ensure model explainability and monitor changes in feature attribution (which can indicate drift).
 5. Use CloudWatch to track performance metrics and trigger alarms for model drift.
 
+## Pruning and Quantization
+
+Pruning and quantization are both effective methods for reducing model size. Pruning removes parts of the model that contribute little to overall performance, such as unnecessary neurons or layers, which reduces the model’s complexity. Quantization further reduces the model size by decreasing the precision of weights (e.g., from 32-bit floating-point to 8-bit integers), significantly lowering memory requirements without drastically impacting accuracy.  
+
+[Model Pruning](https://aws.amazon.com/blogs/machine-learning/pruning-machine-learning-models-with-amazon-sagemaker-debugger-and-amazon-sagemaker-experiments/)  
+[Quantization](https://aws.amazon.com/blogs/machine-learning/leveraging-low-precision-and-quantization-for-deep-learning-using-the-amazon-ec2-c5-instance-and-bigdl/)
+
+
 ## Other
   
 [Ensembles](https://aws.amazon.com/blogs/machine-learning/efficiently-train-tune-and-deploy-custom-ensembles-using-amazon-sagemaker/)
 
 [Access Training Data](https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html)
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html
+
+https://docs.aws.amazon.com/machine-learning/latest/dg/retraining-models-on-new-data.html
+
+https://aws.amazon.com/blogs/machine-learning/automate-model-retraining-with-amazon-sagemaker-pipelines-when-drift-is-detected/
+
+https://aws.amazon.com/blogs/architecture/detecting-data-drift-using-amazon-sagemaker/
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-deployment.html
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-overview.html
+
+https://aws.amazon.com/codecommit/
