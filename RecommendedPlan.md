@@ -32,7 +32,7 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [A
 
 ### Domain 2: Model Development
 
-5. [Choose a Modeling Approach](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19651/aws-ml-engineer-associate-21-choose-a-modeling-approach) (1 hour 30 minutes)
+1. [Choose a Modeling Approach](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19651/aws-ml-engineer-associate-21-choose-a-modeling-approach) (1 hour 30 minutes)
 
 <table>
    <tr><td><a href="AIServices.md">AI Services</a></td></tr>
@@ -44,9 +44,9 @@ If you need to refresh your knowledge, enroll in the Enhanced Exam Prep Plan: [A
 
    - [Use Notebook Instances to Build Models](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-setup-working-env.html)
 
-1. [Train Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19696/aws-ml-engineer-associate-22-train-models) (1 hour 30 minutes)
+2. [Train Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19696/aws-ml-engineer-associate-22-train-models) (1 hour 30 minutes)
 
-2. [Refine Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19678/aws-ml-engineer-associate-23-refine-models) (2 hours)
+3. [Refine Models](https://explore.skillbuilder.aws/learn/course/internal/view/elearning/19678/aws-ml-engineer-associate-23-refine-models) (2 hours)
 
 3. Analyze Model Performance (45 minutes)
 

@@ -4,6 +4,12 @@
 
 The bias versus variance trade-off refers to the challenge of balancing the error due to the model's complexity (variance) and the error due to incorrect assumptions in the model (bias), where high bias can cause underfitting and high variance can cause overfitting
 
+Having low model bias and low model variance leads to good generalization performance and avoids extreme predictions. This balance means that the model has learned the true underlying patterns in the data.   
+
+![bias-variance-trade-off](img/bias-variance-trade-off.png)
+
+This graph illustrates the bias-variance trade-off. Bias is represented by the squared error term, showing that as model complexity increases, bias decreases, but variance, or overfitting, increases. The optimal model complexity lies at the point where the sum of the bias and variance components is minimized, resulting in a balanced fit that generalizes well to new data.
+
 ---
 
 Managed Spot Training uses Amazon EC2 Spot instance to run training jobs instead of on-demand instances. You can specify which training jobs use spot instances and a stopping condition that specifies how long SageMaker waits for a job to run using Amazon EC2 Spot instances. Spot instances can be interrupted, causing jobs to take longer to start or finish. You can configure your managed spot training job to use checkpoints. SageMaker copies checkpoint data from a local path to Amazon S3. When the job is restarted, SageMaker copies the data from Amazon S3 back into the local path. The training job can then resume from the last checkpoint instead of restarting.  
