@@ -107,3 +107,23 @@ Which of the AI/ML stack would you choose to accomplish your goal?
 2. You are training your machine learning (ML) model for a classification problem. You provide answers in the example data during training. Which algorithm can be used for a binary classification, a multi-class classification, and a regression ML task?  
 
     *XGBoost - This implements a gradient-boosted trees algorithm that combines an ensemble of estimates from a set of simpler and weaker models. It can be used for binary classification, multi-class classification, and regression problems.*
+
+---
+
+- Which hyperparameter tuning method is best for finding optimum hyperparameter values with limited compute resources?
+  
+    *Hyperband dynamically allocates resources to promising configurations and quickly discards poor-performing ones. This results in efficient usage of compute resources.*
+
+---
+
+How does iterative model pruning reduce the size of a machine learning (ML) model?
+
+    *It removes the least important parameters or nodes from a model.*
+
+---
+
+A machine learning engineer has been tasked with fine-tuning a pre-trained text generation model. The text generation model needs to be able to answer to industry-specific terminology and acronyms but is otherwise effective in the business solution.
+
+    *Use a custom dataset to fine-tune the model with domain-specific data.*
+
+Domain adaption fine-tuning is useful for industry jargon and technical terms. As long as the model supports this type of fine-tuning, this approach should work.
