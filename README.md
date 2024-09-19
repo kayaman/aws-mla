@@ -8,6 +8,8 @@
 
 ## Recommended Plan [here](RecommendedPlan.md)
 
+## Enhanced Plan [here](EnhancedPlan.md)
+
 ## Study Notes 
 
 - [SageMaker](SageMaker.md)
